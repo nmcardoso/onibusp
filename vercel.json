@@ -3,5 +3,8 @@
     "pages/api/position.js": {
       "memory": 256
     }
-  }
+  },
+  "regions": [
+    "gru1"
+  ]
 }
