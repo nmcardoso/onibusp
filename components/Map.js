@@ -44,6 +44,7 @@ export default function Map() {
   let markers = []
   if (status == 'success' && data) {
     markers = data.map((d, i) => {
+      if (!Array.isArray(d.vs)) return []
       return d.vs.map(({ py, px, p }) => getMarker([py, px], p, getIcon(i), d.cl))
     })
 
