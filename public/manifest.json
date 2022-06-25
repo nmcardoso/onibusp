@@ -22,7 +22,7 @@
   "theme_color": "#1092AA",
   "background_color": "#1092AA",
   "start_url": "/",
-  "display": "fullscreen",
+  "display": "standalone",
   "orientation": "portrait",
   "splash_pages": null
 }
