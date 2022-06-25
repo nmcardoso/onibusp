@@ -51,8 +51,6 @@ export default function Map() {
     markers = [].concat(...markers)
   }
 
-  if (status == 'loading') return <h1>Loading...</h1>
-
   if (status == 'error') return <h1>Error!<br />{error.message}</h1>
 
   return (
