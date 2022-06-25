@@ -1,5 +1,6 @@
 {
   "name": "Onibus USP",
+  "description": "Localização dos ônibus que passam pelo campus da USP em tempo real",
   "short_name": "Onibus USP",
   "icons": [
     {
