@@ -46,6 +46,9 @@ export default function CustomDocument() {
         <meta property="og:site_name" content={APP_NAME} />
         <meta property="og:url" content="https://bususp.vercal.app" />
         <meta property="og:image" content="https://bususp.vercal.app/icons/apple-touch-icon.png" />
+
+        <link rel="prefetch" href="https://b.tile.openstreetmap.org/" />
+        <link rel="preconnect" href="https://b.tile.openstreetmap.org/" />
       </Head>
 
       <body>
