@@ -6,5 +6,8 @@
   },
   "regions": [
     "gru1"
-  ]
+  ],
+  "github": {
+    "silent": true
+  }
 }
