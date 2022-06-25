@@ -16,7 +16,7 @@ const codes = {
 }
 
 const getIcon = (number) => L.icon({
-  iconUrl: `/marker-${number}.svg`,
+  iconUrl: `/assets/img/marker-${number}.svg`,
   iconSize: [20, 35],
   iconAnchor: [10, 34],
   popupAnchor: [0, -32],
