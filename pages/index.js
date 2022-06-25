@@ -1,5 +1,6 @@
 import 'leaflet/dist/leaflet.css'
 import dynamic from 'next/dynamic'
+import Head from 'next/head'
 
 const Map = dynamic(
   import('../components/Map'),
@@ -8,6 +9,12 @@ const Map = dynamic(
 
 export default function Home() {
   return (
-    <Map />
+    <>
+      <Head>
+        <title>Ônibus USP</title>
+      </Head>
+
+      <Map />
+    </>
   )
 }
