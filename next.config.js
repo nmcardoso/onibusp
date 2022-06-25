@@ -10,5 +10,9 @@ module.exports = withPWA({
     skipWaiting: true,
     runtimeCaching,
     buildExcludes: [/middleware-manifest.json$/]
-  }
+  },
+  i18n: {
+    locales: ["pt-BR"],
+    defaultLocale: "pt-BR",
+  },
 })
