@@ -9,12 +9,12 @@ const posUrl = c => `Posicao/Linha?codigoLinha=${c}`
 const authUrl = `Login/Autenticar?token=${process.env.SPTRANS_TOKEN}`
 
 const codes = [
-  2023,   // 8012-10-1
-  34791,  // 8012-10-2
-  2085,   // 8022-10-1
-  34853,  // 8022-10-2
-  2545,   // 8032-10-1
-  35313,  // 8032-10-2
+  2023,   // 8012-10-2
+  34791,  // 8012-10-1
+  2085,   // 8022-10-2
+  34853,  // 8022-10-1
+  2545,   // 8032-10-2
+  35313,  // 8032-10-1
 ]
 
 const client = wrapper(axios.create({
