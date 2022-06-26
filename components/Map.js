@@ -42,7 +42,7 @@ export default function Map() {
   // console.log(data)
 
   let markers = []
-  if (status == 'success' && data) {
+  if (status == 'success' && Array.isArray(data)) {
     markers = data.map((d, i) => {
       if (!Array.isArray(d.vs)) return []
       return d.vs.map(({ py, px, p }) => getMarker([py, px], p, getIcon(i), d.cl))
