@@ -36,7 +36,7 @@ export default function Map() {
     const res = await axios.get('/api/position')
     return res.data
   }, {
-    refetchInterval: 10000,
+    refetchInterval: 4000,
   })
 
   // console.log(data)
