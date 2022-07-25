@@ -3,29 +3,21 @@ import 'leaflet/dist/leaflet.css'
 import { useQuery } from 'react-query'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import L, { marker } from 'leaflet'
+import { BUS_LINES } from '../utils/constants'
 
 const center = [-23.5595306, -46.7299148]
 
-const codes = {
-  34791: '8012-10 (Metro Butanta)',   // 8012-10-1
-  2023: '8012-10 (Terminal P3)',      // 8012-10-2
-  34853: '8022-10 (Metro Butanta)',   // 8022-10-1
-  2085: '8022-10 (Terminal P3)',      // 8022-10-2
-  35313: '8032-10',                   // 8032-10-1
-  2545: '8032-10'                     // 8032-10-2
-}
-
-const getIcon = (number) => L.icon({
-  iconUrl: `/assets/img/marker-${number}.svg`,
+const getIcon = (iconColor) => L.icon({
+  iconUrl: `/assets/img/marker-${iconColor}.svg`,
   iconSize: [20, 35],
   iconAnchor: [10, 34],
   popupAnchor: [0, -32],
 })
 
-const getMarker = (pos, key, icon, cl) => (
-  <Marker position={pos} key={key} icon={icon}>
+const getMarker = (pos, key, lineCode) => (
+  <Marker position={pos} key={key} icon={getIcon(BUS_LINES[lineCode].iconColor)}>
     <Popup>
-      {codes[cl]}
+      {BUS_LINES[lineCode].displayName}
     </Popup>
   </Marker>
 )
@@ -45,7 +37,8 @@ export default function Map() {
   if (status == 'success' && Array.isArray(data)) {
     markers = data.map((d, i) => {
       if (!Array.isArray(d.vs)) return []
-      return d.vs.map(({ py, px, p }) => getMarker([py, px], p, getIcon(i), d.cl))
+      console.log(BUS_LINES[d.cl])
+      return d.vs.map(({ py, px, p }) => getMarker([py, px], p, d.cl))
     })
 
     markers = [].concat(...markers)
