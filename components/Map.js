@@ -35,7 +35,6 @@ export default function Map() {
   if (status == 'success' && Array.isArray(data)) {
     markers = data.map((d, i) => {
       if (!Array.isArray(d.vs)) return []
-      console.log(BUS_LINES[d.cl])
       return d.vs.map(({ py, px, p }) => getMarker([py, px], p, d.cl))
     })
 
