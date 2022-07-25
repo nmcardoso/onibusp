@@ -46,7 +46,9 @@ export default async function handler(req, res) {
         v['cl'] = BUS_LINES_ARRAY[i]
         return v
       })
+
       cachedResponse = aggregate
+      lastResponse = now
       res.json(aggregate)
     } else {
       res.json(cachedResponse)
