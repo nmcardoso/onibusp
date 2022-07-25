@@ -1,11 +1,8 @@
 import '../styles/globals.css'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import Head from 'next/head'
+import { APP_NAME, APP_DESCRIPTION, THEME_COLOR } from '../utils/constants'
 // import { ReactQueryDevtools } from 'react-query/devtools'
-
-const APP_NAME = 'Onibus USP'
-const APP_DESCRIPTION = 'Localização dos ônibus que passam pelo campus da USP em tempo real'
-const THEME_COLOR = '#1092AA'
 
 const queryClient = new QueryClient()
 
