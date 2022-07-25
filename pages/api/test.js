@@ -1,3 +1,6 @@
+let i = 0
+
 export default function handler(req, res) {
-  res.send('test')
+  i = i + 1
+  res.send(String(i))
 }
