@@ -31,8 +31,6 @@ export default function Map() {
     refetchInterval: 4000,
   })
 
-  // console.log(data)
-
   let markers = []
   if (status == 'success' && Array.isArray(data)) {
     markers = data.map((d, i) => {
