@@ -20,7 +20,7 @@ let lastAuth = null
 
 const auth = async () => {
   const now = new Date()
-  const maxAge = new Date(now - 1 * MS_PER_MINUTE)
+  const maxAge = new Date(now - 60 * MS_PER_MINUTE)
 
   if (!lastAuth || lastAuth < maxAge) {
     await client.post(authUrl)
