@@ -11,7 +11,7 @@ svg = """
   <g fill="none" fill-rule="evenodd">
     <use fill="url(#a)" xlink:href="#b"/>
     <path stroke-opacity=".243" stroke="{stroke_color}" d="M9.997 33.055c2.184-6.368 3.843-10.773 4.982-13.223.42-.902.893-1.723 1.54-2.715.157-.24.994-1.493 1.217-1.84C18.975 13.344 19.5 11.927 19.5 10a9.5 9.5 0 0 0-19 0c0 2.012.507 3.462 1.695 5.372.23.37 1.228 1.892 1.484 2.3.471.753.857 1.434 1.208 2.152 1.198 2.452 2.9 6.858 5.11 13.231z"/>
-    <circle fill-opacity=".54" fill="{circle_color}" cx="10" cy="10" r="3.6"/>
+    <circle fill-opacity="{fill_opacity}" fill="{circle_color}" cx="10" cy="10" r="3.6"/>
   </g>
 </svg>
 """.lstrip()
@@ -28,54 +28,62 @@ def main():
       'initial_color': '#1DABFC', 
       'final_color': '#076EA8',
       'circle_color': '#000',
-      'stroke_color': '#000'
+      'stroke_color': '#000',
+      'fill_opacity': '.54',
     },
     'blue-light': {
       'initial_color': '#1DABFC', 
       'final_color': '#076EA8', 
       'circle_color': '#FFF',
-      'stroke_color': '#FFF'
+      'stroke_color': '#000',
+      'fill_opacity': '.62',
     },
     'red': {
       'initial_color': '#FB7468', 
       'final_color': '#E8443C', 
       'circle_color': '#000',
-      'stroke_color': '#000'
+      'stroke_color': '#000',
+      'fill_opacity': '.54',
     },
     'red-light': {
       'initial_color': '#FB7468', 
       'final_color': '#E8443C', 
       'circle_color': '#FFF',
-      'stroke_color': '#FFF'
+      'stroke_color': '#000',
+      'fill_opacity': '.62',
     },
     'green': {
       'initial_color': '#50DE40', 
       'final_color': '#12944A', 
       'circle_color': '#000',
-      'stroke_color': '#000'
+      'stroke_color': '#000',
+      'fill_opacity': '.54',
     },
     'green-light': {
       'initial_color': '#50DE40', 
       'final_color': '#12944A', 
       'circle_color': '#FFF',
-      'stroke_color': '#FFF'
+      'stroke_color': '#000',
+      'fill_opacity': '.62',
     },
     'purple': {
       'initial_color': '#943FA2', 
       'final_color': '#5F2867', 
       'circle_color': '#000',
-      'stroke_color': '#000'
+      'stroke_color': '#000',
+      'fill_opacity': '.54',
     },
     'purple-light': {
       'initial_color': '#943FA2', 
       'final_color': '#5F2867', 
       'circle_color': '#FFF',
-      'stroke_color': '#FFF'
+      'stroke_color': '#000',
+      'fill_opacity': '.62',
     }
   }
 
   for name, params in colors.items():
-    with open(f'../public/assets/img/marker-{name}.svg', 'w') as fp:
+    with open(f'../public/assets/img/marker-{name}-v2.svg', 'w') as fp:
       fp.write(svg.format(**params))
 
 
