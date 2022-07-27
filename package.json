@@ -12,12 +12,14 @@
   "dependencies": {
     "axios": "^0.27.2",
     "axios-cookiejar-support": "^4.0.2",
+    "bulma": "^0.9.4",
     "leaflet": "^1.8.0",
     "next": "12.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-leaflet": "^4.0.0",
     "react-query": "^3.39.1",
+    "sass": "^1.54.0",
     "tough-cookie": "^4.0.0"
   },
   "devDependencies": {

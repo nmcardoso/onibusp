@@ -1,7 +1,8 @@
-import '../styles/globals.css'
+import '../styles/globals.scss'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import Head from 'next/head'
 import { APP_NAME, APP_DESCRIPTION, THEME_COLOR } from '../utils/constants'
+import '../styles/bulma.scss'
 // import { ReactQueryDevtools } from 'react-query/devtools'
 
 const queryClient = new QueryClient()
