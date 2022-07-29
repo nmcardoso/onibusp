@@ -4,7 +4,7 @@ import { BUS_LINES } from '../utils/constants'
 
 
 const getIcon = (iconColor) => L.icon({
-  iconUrl: `/assets/img/marker-${iconColor}-v2.svg`,
+  iconUrl: `/assets/img/marker-${iconColor}.svg`,
   iconSize: [20, 35],
   iconAnchor: [10, 34],
   popupAnchor: [0, -32],
