@@ -20,7 +20,10 @@ export default function BusRoute({ lineCode }) {
 
   if (Array.isArray(positions)) {
     return (
-      <Polyline positions={positions} pathOptions={{ color: BUS_LINES[lineCode].pathColor }}>
+      <Polyline
+        key={lineCode}
+        positions={positions}
+        pathOptions={{ color: BUS_LINES[lineCode].pathColor }}>
         <Popup>
           Ocultar Rota
         </Popup>
