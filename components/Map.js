@@ -1,26 +1,10 @@
 import axios from 'axios'
 import 'leaflet/dist/leaflet.css'
 import { useQuery } from 'react-query'
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
-import L, { marker } from 'leaflet'
-import { BUS_LINES } from '../utils/constants'
+import { MapContainer, TileLayer } from 'react-leaflet'
+import BusMarker from './BusMarker'
 
 const center = [-23.5595306, -46.7299148]
-
-const getIcon = (iconColor) => L.icon({
-  iconUrl: `/assets/img/marker-${iconColor}-v2.svg`,
-  iconSize: [20, 35],
-  iconAnchor: [10, 34],
-  popupAnchor: [0, -32],
-})
-
-const getMarker = (pos, key, lineCode) => (
-  <Marker position={pos} key={key} icon={getIcon(BUS_LINES[lineCode].iconColor)}>
-    <Popup>
-      {BUS_LINES[lineCode].displayName}
-    </Popup>
-  </Marker>
-)
 
 
 export default function Map() {
@@ -35,7 +19,7 @@ export default function Map() {
   if (status == 'success' && Array.isArray(data)) {
     markers = data.map((d, i) => {
       if (!Array.isArray(d.vs)) return []
-      return d.vs.map(({ py, px, p }) => getMarker([py, px], p, d.cl))
+      return d.vs.map(({ py, px, p }) => <BusMarker pos={[py, px]} key={p} lineCode={d.cl} />)
     })
 
     markers = [].concat(...markers)
