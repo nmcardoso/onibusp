@@ -1,0 +1,28 @@
+.container {
+  position: relative;
+  z-index: 800;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  margin-left: 10px;
+  pointer-events: auto;
+}
+
+.top {
+  top: 84px;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
+
+.top,
+.left,
+.right {
+  position: absolute;
+  z-index: 1000;
+  pointer-events: none;
+}
