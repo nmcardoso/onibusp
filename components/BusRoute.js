@@ -1,10 +1,13 @@
 import { Polyline, Popup } from 'react-leaflet'
 import axios from 'axios'
 import { BUS_LINES } from '../utils/constants'
-import { useEffect, useState } from 'react'
+import { store } from '../utils/store'
+import { useEffect, useState, useContext } from 'react'
 
 export default function BusRoute({ lineCode }) {
   const [positions, setPositions] = useState(null)
+  const appContext = useContext(store)
+  const { appDispatch } = appContext
 
   useEffect(() => {
     const handle = async () => {
@@ -25,7 +28,20 @@ export default function BusRoute({ lineCode }) {
         positions={positions}
         pathOptions={{ color: BUS_LINES[lineCode].pathColor }}>
         <Popup>
-          Ocultar Rota
+          <button
+            className="button is-ghost is-small"
+            onClick={e => {
+              e.stopPropagation()
+              appDispatch({
+                type: 'toggleBusRoute',
+                payload: {
+                  id: lineCode,
+                  show: false
+                }
+              })
+            }}>
+            Ocultar percurso {BUS_LINES[lineCode].displayName}
+          </button>
         </Popup>
       </Polyline>
     )
