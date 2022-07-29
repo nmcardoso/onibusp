@@ -83,7 +83,7 @@ def main():
   }
 
   for name, params in colors.items():
-    with open(f'../public/assets/img/marker-{name}-v2.svg', 'w') as fp:
+    with open(f'../public/assets/img/marker-{name}.svg', 'w') as fp:
       fp.write(svg.format(**params))
 
 
