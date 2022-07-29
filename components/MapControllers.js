@@ -7,7 +7,7 @@ export default function MapControllers() {
     <div>
       <div className={`${styles.top} ${styles.left}`}>
         <div className={styles.container}>
-          <ConfigController />
+          {/* <ConfigController /> */}
           <BusLineController />
         </div>
       </div>
