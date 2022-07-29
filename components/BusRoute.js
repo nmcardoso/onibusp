@@ -9,10 +9,10 @@ export default function BusRoute({ lineCode }) {
   useEffect(() => {
     const handle = async () => {
       try {
-        const res = await axios.get(`/data/routes/${String(lineCode)}.json`)
+        const res = await axios.get(`/data/routes/${String(lineCode)}.json?v=1`)
         setPositions(res.data)
       } catch (e) {
-        console.log('error')
+        console.log('não foi possível carregar a rota')
       }
     }
     handle()
