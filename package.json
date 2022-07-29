@@ -21,6 +21,7 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.4.0",
     "react-leaflet": "^4.0.0",
+    "react-modern-drawer": "^1.1.2",
     "react-query": "^3.39.1",
     "sass": "^1.54.0",
     "tough-cookie": "^4.0.0"
