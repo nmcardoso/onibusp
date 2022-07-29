@@ -22,5 +22,8 @@ $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;
 
+$button-padding-horizontal: 0.75em;
+
 // Import only what you need from Bulma
 @import "../node_modules/bulma/bulma.sass";
+@import "../node_modules/bulma-switch/src/sass/index.sass";
