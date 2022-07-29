@@ -1,15 +1,19 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { FaMapSigns } from 'react-icons/fa'
 import { MdCheck, MdClose } from 'react-icons/md'
 import { BUS_LINES } from '../utils/constants'
 import MapControllerButton from './MapControllerButton'
 import Modal from './Modal'
 import Switch from './Switch'
+import { store } from '../utils/store'
 
 
-const ToggleButton = ({ active }) => {
+const ToggleButton = ({ active, onClick }) => {
   return (
-    <button className={`button px-2 is-small ${active ? 'is-success' : 'is-danger'}`} style={{ height: '2.3em' }}>
+    <button
+      className={`button px-2 is-small ${active ? 'is-success' : 'is-danger'}`}
+      style={{ height: '2.3em' }}
+      onClick={onClick}>
       <span style={{ fontSize: '14px', lineHeight: '9px' }}>
         {active ? <MdCheck /> : <MdClose />}
       </span>
@@ -21,6 +25,8 @@ const ToggleButton = ({ active }) => {
 export default function BusRouteController() {
   const [showModal, setShowModal] = useState(false)
   const toggleModalState = () => setShowModal(!showModal)
+  const appContext = useContext(store)
+  const { appState, appDispatch } = appContext
 
   const lines = Object.entries(BUS_LINES).map(([key, value], i) => (
     <div key={i} className="columns is-vcentered is-variable is-1 border-t">
@@ -31,10 +37,32 @@ export default function BusRouteController() {
         </div>
       </div>
       <div className="column is-2 is-flex is-justify-content-center">
-        <ToggleButton active={true} />
+        <ToggleButton
+          active={appState.control[parseInt(key)].bus}
+          onClick={(e) => {
+            e.stopPropagation()
+            appDispatch({
+              type: 'toggleBusLine',
+              payload: {
+                id: parseInt(key),
+                show: !appState.control[parseInt(key)].bus
+              }
+            })
+          }} />
       </div>
       <div className="column is-2 is-flex is-justify-content-center">
-        <ToggleButton active={false} />
+        <ToggleButton
+          active={appState.control[parseInt(key)].route}
+          onClick={(e) => {
+            e.stopPropagation()
+            appDispatch({
+              type: 'toggleBusRoute',
+              payload: {
+                id: parseInt(key),
+                show: !appState.control[parseInt(key)].route
+              }
+            })
+          }} />
       </div>
     </div>
   ))
