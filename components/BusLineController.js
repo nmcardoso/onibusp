@@ -5,6 +5,9 @@ import { BUS_LINES } from '../utils/constants'
 import MapControllerButton from './MapControllerButton'
 import Modal from './Modal'
 import { store } from '../utils/store'
+import Drawer from 'react-modern-drawer'
+import 'react-modern-drawer/dist/index.css'
+import styles from '../styles/BusLineController.module.scss'
 
 
 const ToggleButton = ({ active, onClick }) => {
@@ -72,7 +75,50 @@ export default function BusLineController() {
         <RiMapPinAddFill />
       </MapControllerButton>
 
-      <Modal title="Linhas" active={showModal} onClose={toggleModalState}>
+      <Drawer
+        open={showModal}
+        onClose={toggleModalState}
+        direction='left'
+        style={{ cursor: 'auto' }}
+        size="290px"
+      >
+        <p className="is-size-5 px-2 pt-1 pb-3 mb-3 border-b">Mostrar Linhas</p>
+        {Object.entries(BUS_LINES).map(([key, value]) => (
+          <div
+            key={key}
+            className={`columns is-mobile is-vcentered is-variable is-1 border-b mx-0 ${styles.item}`}
+            onClick={(e) => {
+              e.stopPropagation()
+              appDispatch({
+                type: 'toggleBusLine',
+                payload: {
+                  id: parseInt(key),
+                  show: !appState.control[parseInt(key)].bus
+                }
+              })
+            }}
+          >
+            <div className="column">
+              <div className="is-flex is-align-content-center">
+                <img
+                  alt=""
+                  width="14px"
+                  src={`/assets/img/marker-${value.iconColor}.svg`} />
+                <span className="ml-2 is-size-6">
+                  {value.displayName}
+                </span>
+              </div>
+            </div>
+            <div className="column is-2">
+              <ToggleButton
+                active={appState.control[parseInt(key)].bus}
+                onClick={() => { }} />
+            </div>
+          </div>
+        ))}
+      </Drawer>
+
+      {/* <Modal title="Linhas" active={showModal} onClose={toggleModalState}>
         <div className="columns is-vcentered is-variable is-1">
           <div className="column py-1">
             <div className="is-flex is-align-content-center">
@@ -87,7 +133,7 @@ export default function BusLineController() {
           </div>
         </div>
         {lines}
-      </Modal>
+      </Modal> */}
     </>
   )
 }

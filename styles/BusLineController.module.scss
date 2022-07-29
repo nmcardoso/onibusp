@@ -1,0 +1,11 @@
+.item {
+  cursor: pointer;
+}
+
+.item:hover {
+  background-color: #ebebeb;
+}
+
+.item:active {
+  background-color: #dedede;
+}
