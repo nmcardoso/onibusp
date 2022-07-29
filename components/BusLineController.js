@@ -80,7 +80,8 @@ export default function BusLineController() {
         onClose={toggleModalState}
         direction='left'
         style={{ cursor: 'auto' }}
-        size="290px"
+        size="265px"
+        duration={300}
       >
         <p className="is-size-5 px-2 pt-1 pb-3 mb-3 border-b">Mostrar Linhas</p>
         {Object.entries(BUS_LINES).map(([key, value]) => (
@@ -104,7 +105,7 @@ export default function BusLineController() {
                   alt=""
                   width="14px"
                   src={`/assets/img/marker-${value.iconColor}.svg`} />
-                <span className="ml-2 is-size-6">
+                <span className="ml-1" style={{ fontSize: '0.88rem' }}>
                   {value.displayName}
                 </span>
               </div>
