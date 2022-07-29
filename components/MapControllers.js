@@ -1,6 +1,5 @@
 import styles from '../styles/MapControllers.module.scss'
-import AddLineController from './AddLineController'
-import BusRouteController from './BusRouteController'
+import BusLineController from './BusLineController'
 import ConfigController from './ConfigController'
 
 export default function MapControllers() {
@@ -9,8 +8,7 @@ export default function MapControllers() {
       <div className={`${styles.top} ${styles.left}`}>
         <div className={styles.container}>
           <ConfigController />
-          <AddLineController />
-          <BusRouteController />
+          <BusLineController />
         </div>
       </div>
     </div>

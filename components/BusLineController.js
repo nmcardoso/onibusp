@@ -1,10 +1,9 @@
 import { useContext, useState } from 'react'
-import { FaMapSigns } from 'react-icons/fa'
+import { RiMapPinAddFill } from 'react-icons/ri'
 import { MdCheck, MdClose } from 'react-icons/md'
 import { BUS_LINES } from '../utils/constants'
 import MapControllerButton from './MapControllerButton'
 import Modal from './Modal'
-import Switch from './Switch'
 import { store } from '../utils/store'
 
 
@@ -22,7 +21,7 @@ const ToggleButton = ({ active, onClick }) => {
 }
 
 
-export default function BusRouteController() {
+export default function BusLineController() {
   const [showModal, setShowModal] = useState(false)
   const toggleModalState = () => setShowModal(!showModal)
   const appContext = useContext(store)
@@ -69,8 +68,8 @@ export default function BusRouteController() {
 
   return (
     <>
-      <MapControllerButton style={{ fontSize: '17px' }} onClick={toggleModalState}>
-        <FaMapSigns />
+      <MapControllerButton style={{ fontSize: '21px' }} onClick={toggleModalState}>
+        <RiMapPinAddFill />
       </MapControllerButton>
 
       <Modal title="Linhas" active={showModal} onClose={toggleModalState}>
