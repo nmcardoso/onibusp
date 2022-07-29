@@ -1,5 +1,7 @@
 import L, { marker } from 'leaflet'
 import { Marker, Popup } from 'react-leaflet'
+import { useContext } from 'react'
+import { store } from '../utils/store'
 import { BUS_LINES } from '../utils/constants'
 
 
@@ -11,11 +13,31 @@ const getIcon = (iconColor) => L.icon({
 })
 
 export default function BusMarker({ pos, key, lineCode }) {
+  const appContext = useContext(store)
+  const { appState, appDispatch } = appContext
+
   return (
     <Marker position={pos} key={key} icon={getIcon(BUS_LINES[lineCode].iconColor)}>
       <Popup>
-        {BUS_LINES[lineCode].displayName}<br />
-        <a href="?ver">Ver Percurso</a>
+        <div>
+          {BUS_LINES[lineCode].displayName}
+        </div>
+        <div className="has-text-centered">
+          <button
+            className="button is-ghost is-small"
+            onClick={e => {
+              e.stopPropagation()
+              appDispatch({
+                type: 'toggleBusRoute',
+                payload: {
+                  id: lineCode,
+                  show: !appState.control[parseInt(lineCode)].route
+                }
+              })
+            }}>
+            {appState.control[lineCode].route ? 'Ocultar Percurso' : 'Ver Percurso'}
+          </button>
+        </div>
       </Popup>
     </Marker>
   )
