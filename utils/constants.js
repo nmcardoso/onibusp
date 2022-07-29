@@ -5,27 +5,33 @@ export const THEME_COLOR = '#1092AA'
 export const BUS_LINES = {
   34791: { // 8012-10-1
     displayName: '8012-10 (Metro Butanta)',
-    iconColor: 'red'
+    iconColor: 'blue',
+    pathColor: '#1DABFC',
   },
   2023: { // 8012-10-2
     displayName: '8012-10 (Terminal P3)',
-    iconColor: 'red-light'
+    iconColor: 'blue-light',
+    pathColor: '#076EA8',
   },
   34853: { // 8022-10-1
     displayName: '8022-10 (Metro Butanta)',
-    iconColor: 'blue'
+    iconColor: 'red',
+    pathColor: '#FB7468',
   },
   2085: { // 8022-10-2
     displayName: '8022-10 (Terminal P3)',
-    iconColor: 'blue-light'
+    iconColor: 'red-light',
+    pathColor: '#E8443C',
   },
   35313: { // 8032-10-1
     displayName: '8032-10',
-    iconColor: 'green'
+    iconColor: 'green',
+    pathColor: '#50DE40',
   },
   2545: { // 8032-10-2
     displayName: '8032-10',
-    iconColor: 'green-light'
+    iconColor: 'green',
+    pathColor: '#12944A',
   }
 }
 export const BUS_LINES_ARRAY = Object.keys(BUS_LINES)
