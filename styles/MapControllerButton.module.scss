@@ -1,0 +1,21 @@
+.btn {
+  display: block;
+  margin-bottom: 10px;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  line-height: 34px;
+  font-size: 20px;
+  width: 34px;
+  height: 34px;
+  border-radius: 4px;
+  text-align: center;
+  color: #000;
+  cursor: pointer;
+  // z-index: 1000;
+}
+
+.btn:hover {
+  background-color: #f4f4f4;
+  cursor: pointer;
+}
