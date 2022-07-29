@@ -14,3 +14,15 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.pointer-events {
+  pointer-events: auto !important;
+}
+
+.border-b {
+  border-bottom: 1px solid #aaa;
+}
+
+.border-t {
+  border-top: 1px solid #ccc;
+}
