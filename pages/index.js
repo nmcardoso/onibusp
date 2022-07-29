@@ -1,6 +1,7 @@
 import 'leaflet/dist/leaflet.css'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
+import { AppStateProvider } from '../utils/store'
 
 const Map = dynamic(
   import('../components/Map'),
@@ -14,7 +15,9 @@ export default function Home() {
         <title>Ônibus USP</title>
       </Head>
 
-      <Map />
+      <AppStateProvider>
+        <Map />
+      </AppStateProvider>
     </>
   )
 }
