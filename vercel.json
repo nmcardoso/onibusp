@@ -2,6 +2,9 @@
   "functions": {
     "pages/api/position.js": {
       "memory": 256
+    },
+    "pages/api/dev_*.js": {
+      "excludeFiles": "*"
     }
   },
   "regions": [
