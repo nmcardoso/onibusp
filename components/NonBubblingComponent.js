@@ -4,11 +4,12 @@ import { useRef } from 'react'
 export default function NonBubblingComponent({
   children,
   style = {},
-  className = {}
+  className = {},
+  prevent = true
 }) {
   const r = useRef(null)
 
-  if (r.current) {
+  if (r.current && prevent) {
     L.DomEvent.disableClickPropagation(r.current)
     L.DomEvent.disableScrollPropagation(r.current)
   }
