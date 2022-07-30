@@ -28,7 +28,7 @@ export default function BusRouteController() {
   const [isDrawerOpen, setDrawerState] = useState(false)
 
   return (
-    <NonBubblingComponent>
+    <NonBubblingComponent prevent={isDrawerOpen}>
       <MapControllerButton
         style={{ fontSize: '20px' }}
         onClick={() => setDrawerState(!isDrawerOpen)}>
