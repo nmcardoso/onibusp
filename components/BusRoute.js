@@ -40,7 +40,7 @@ export default function BusRoute({ lineCode }) {
                 }
               })
             }}>
-            Ocultar percurso {BUS_LINES[lineCode].displayName}
+            Ocultar percurso
           </button>
         </Popup>
       </Polyline>
