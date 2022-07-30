@@ -12,12 +12,12 @@ const getIcon = (iconColor) => L.icon({
   popupAnchor: [0, -32],
 })
 
-export default function BusMarker({ pos, key, lineCode }) {
+export default function BusMarker({ pos, lineCode }) {
   const appContext = useContext(store)
   const { appState, appDispatch } = appContext
 
   return (
-    <Marker position={pos} key={key} icon={getIcon(BUS_LINES[lineCode].iconColor)}>
+    <Marker position={pos} icon={getIcon(BUS_LINES[lineCode].iconColor)}>
       <Popup>
         <div>
           {BUS_LINES[lineCode].displayName}
