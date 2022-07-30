@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { useContext, useState } from 'react'
 import { RiMapPinAddFill } from 'react-icons/ri'
 import { MdCheck, MdClose } from 'react-icons/md'
