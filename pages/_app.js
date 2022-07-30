@@ -3,6 +3,7 @@ import { QueryClient, QueryClientProvider } from 'react-query'
 import Head from 'next/head'
 import { APP_NAME, APP_DESCRIPTION, THEME_COLOR } from '../utils/constants'
 import '../styles/bulma.scss'
+import 'react-modern-drawer/dist/index.css'
 // import { ReactQueryDevtools } from 'react-query/devtools'
 
 const queryClient = new QueryClient()

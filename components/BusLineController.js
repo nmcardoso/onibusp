@@ -6,7 +6,6 @@ import MapControllerButton from './MapControllerButton'
 import Modal from './Modal'
 import { store } from '../utils/store'
 import Drawer from 'react-modern-drawer'
-import 'react-modern-drawer/dist/index.css'
 import styles from '../styles/BusLineController.module.scss'
 
 
