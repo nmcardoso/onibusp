@@ -11,7 +11,7 @@ const authUrl = `Login/Autenticar?token=${process.env.SPTRANS_TOKEN}`
 
 const client = wrapper(axios.create({
   baseURL: 'http://api.olhovivo.sptrans.com.br/v2.1/',
-  timeout: 3000,
+  timeout: 6000,
   jar: jar
 }))
 
