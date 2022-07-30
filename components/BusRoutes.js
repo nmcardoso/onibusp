@@ -10,7 +10,7 @@ export default function BusRoutes() {
   let routes = []
   for (let lineId in appState.control) {
     if (appState.control[lineId].route) {
-      routes.push(<BusRoute lineCode={lineId} />)
+      routes.push(<BusRoute key={lineId} lineCode={lineId} />)
     }
   }
 
