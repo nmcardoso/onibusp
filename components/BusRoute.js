@@ -24,7 +24,6 @@ export default function BusRoute({ lineCode }) {
   if (Array.isArray(positions)) {
     return (
       <Polyline
-        key={lineCode}
         positions={positions}
         pathOptions={{ color: BUS_LINES[lineCode].pathColor }}>
         <Popup>
