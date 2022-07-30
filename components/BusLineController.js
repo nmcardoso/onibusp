@@ -7,6 +7,7 @@ import MapControllerButton from './MapControllerButton'
 import { store } from '../utils/store'
 import Drawer from 'react-modern-drawer'
 import styles from '../styles/BusLineController.module.scss'
+import NonBubblingComponent from './NonBubblingComponent'
 
 
 const ToggleButton = ({ active, onClick }) => {
@@ -29,22 +30,25 @@ export default function BusLineController() {
   const [isDrawerOpen, setDrawerState] = useState(false)
 
   return (
-    <>
+    <NonBubblingComponent prevent={isDrawerOpen}>
       <MapControllerButton
         style={{ fontSize: '21px' }}
-        onClick={() => setDrawerState(true)}>
+        onClick={() => setDrawerState(!isDrawerOpen)}>
         <RiMapPinAddFill />
       </MapControllerButton>
 
       <Drawer
         open={isDrawerOpen}
-        onClose={() => setDrawerState(false)}
+        onClose={() => setDrawerState(!isDrawerOpen)}
         direction='left'
         style={{ cursor: 'auto' }}
         size="265px"
         duration={300}
       >
-        <p className="is-size-5 px-2 pt-1 pb-3 mb-3 border-b">Mostrar Linhas</p>
+        <p className="is-size-5 px-2 pt-1 pb-3 mb-3 border-b">
+          Selecionar Linhas
+        </p>
+
         {Object.entries(BUS_LINES).map(([key, value]) => (
           <div
             key={key}
@@ -64,7 +68,7 @@ export default function BusLineController() {
               <div className="is-flex is-align-content-center">
                 <img
                   alt=""
-                  width="14px"
+                  width="13px"
                   src={`/assets/img/marker-${value.iconColor}.svg`} />
                 <span className="ml-1" style={{ fontSize: '0.88rem' }}>
                   {value.displayName}
@@ -79,6 +83,6 @@ export default function BusLineController() {
           </div>
         ))}
       </Drawer>
-    </>
+    </NonBubblingComponent>
   )
 }
