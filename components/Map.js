@@ -13,7 +13,9 @@ export default function Map() {
         center={center}
         zoom={16}
         style={{ width: '100vw', height: '100vh' }}
+        dragging={true}
         doubleClickZoom={false}
+        scrollWheelZoom={true}
       >
         <TileLayer
           url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
