@@ -33,6 +33,11 @@ const initialState = {
       bus: true,
       route: false
     }
+  },
+  config: {
+    showZoomController: true,
+    showBusLineController: true,
+    showBusRouteController: true
   }
 }
 
@@ -53,6 +58,13 @@ const toggleBusRouteAction = (state, action) => {
   return s
 }
 
+const toggleConfigAction = (state, action) => {
+  const s = { ...state }
+  s.config[action.payload.config] = action.payload.value
+  persistStateAsync(s)
+  return s
+}
+
 const loadSavedStateAction = (state, action) => {
   return action.payload
 }
@@ -64,6 +76,8 @@ const AppStateProvider = ({ children }) => {
         return toggleBusLineAction(state, action)
       case 'toggleBusRoute':
         return toggleBusRouteAction(state, action)
+      case 'toggleConfig':
+        return toggleConfigAction(state, action)
       case 'loadSavedState':
         return loadSavedStateAction(state, action)
       default:
