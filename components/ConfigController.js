@@ -8,7 +8,6 @@ import { useMobile } from '../utils/responsive'
 import { BackButton } from './BackButton'
 import { version } from '../package.json'
 import { APP_NAME } from '../utils/constants'
-import Switch from 'react-switch'
 import CheckIcon from './CheckIcon'
 
 const ConfigHeading = ({ children, className = '', style = {} }) => {
