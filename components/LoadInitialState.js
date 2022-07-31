@@ -10,6 +10,10 @@ export default function LoadInitialState() {
   useEffect(() => {
     localforage.getItem('appState', (err, loadedState) => {
       if (!err && loadedState !== null) {
+        // Essa implementação está ok por agora, mas descartar o estado salvo
+        // a cada atualização do schema não é um boa ideia do ponto de vista
+        // de experiência de usuário. No futuro, esta implementação deve
+        // comparar e mesclar os estados caso a versão seja diferente
         if (loadedState.schemaVersion === SCHEMA_VERSION) {
           appDispatch({ type: 'loadSavedState', payload: loadedState })
         }
