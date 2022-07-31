@@ -23,6 +23,7 @@
     "react-leaflet": "^4.0.0",
     "react-modern-drawer": "^1.1.2",
     "react-query": "^3.39.1",
+    "react-responsive": "^9.0.0-beta.10",
     "sass": "^1.54.0",
     "tough-cookie": "^4.0.0"
   },
