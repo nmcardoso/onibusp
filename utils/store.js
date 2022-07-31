@@ -38,7 +38,7 @@ const initialState = {
     }
   },
   config: {
-    showZoomController: true,
+    showZoomController: false,
     showBusLineController: true,
     showBusRouteController: true
   }
