@@ -9,7 +9,7 @@ export default function LoadInitialState() {
 
   useEffect(() => {
     localforage.getItem('appState', (err, loadedState) => {
-      if (!err) {
+      if (!err && loadedState !== null) {
         appDispatch({ type: 'loadSavedState', payload: loadedState })
       }
     })
