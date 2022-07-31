@@ -59,6 +59,8 @@ function MyApp({ Component, pageProps }) {
 
         <link rel="prefetch" href="https://b.tile.openstreetmap.org/" />
         <link rel="preconnect" href="https://b.tile.openstreetmap.org/" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
       </Head>
 
       <QueryClientProvider client={queryClient}>
