@@ -53,6 +53,10 @@ const toggleBusRouteAction = (state, action) => {
   return s
 }
 
+const loadSavedStateAction = (state, action) => {
+  return action.payload
+}
+
 const AppStateProvider = ({ children }) => {
   const [appState, appDispatch] = useReducer((state, action) => {
     switch (action.type) {
@@ -60,6 +64,8 @@ const AppStateProvider = ({ children }) => {
         return toggleBusLineAction(state, action)
       case 'toggleBusRoute':
         return toggleBusRouteAction(state, action)
+      case 'loadSavedState':
+        return loadSavedStateAction(state, action)
       default:
         return state
     }

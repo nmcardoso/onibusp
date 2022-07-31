@@ -1,6 +1,7 @@
 import 'leaflet/dist/leaflet.css'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
+import LoadInitialState from '../components/LoadInitialState'
 import { AppStateProvider } from '../utils/store'
 
 const Map = dynamic(
@@ -16,6 +17,7 @@ export default function Home() {
       </Head>
 
       <AppStateProvider>
+        <LoadInitialState />
         <Map />
       </AppStateProvider>
     </>
