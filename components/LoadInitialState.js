@@ -1,6 +1,6 @@
 import { useContext, useEffect } from 'react'
 import localforage from 'localforage'
-import { store } from '../utils/store'
+import { SCHEMA_VERSION, store } from '../utils/store'
 
 
 export default function LoadInitialState() {
@@ -10,7 +10,9 @@ export default function LoadInitialState() {
   useEffect(() => {
     localforage.getItem('appState', (err, loadedState) => {
       if (!err && loadedState !== null) {
-        appDispatch({ type: 'loadSavedState', payload: loadedState })
+        if (loadedState.schemaVersion === SCHEMA_VERSION) {
+          appDispatch({ type: 'loadSavedState', payload: loadedState })
+        }
       }
     })
   }, [appDispatch])

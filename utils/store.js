@@ -7,7 +7,10 @@ const persistStateAsync = (state) => {
   })
 }
 
+export const SCHEMA_VERSION = 1
+
 const initialState = {
+  schemaVersion: SCHEMA_VERSION,
   control: {
     34791: {
       bus: true,
@@ -41,7 +44,7 @@ const initialState = {
   }
 }
 
-const store = createContext(initialState)
+export const store = createContext(initialState)
 const { Provider } = store
 
 const toggleBusLineAction = (state, action) => {
@@ -69,7 +72,7 @@ const loadSavedStateAction = (state, action) => {
   return action.payload
 }
 
-const AppStateProvider = ({ children }) => {
+export const AppStateProvider = ({ children }) => {
   const [appState, appDispatch] = useReducer((state, action) => {
     switch (action.type) {
       case 'toggleBusLine':
@@ -87,5 +90,3 @@ const AppStateProvider = ({ children }) => {
 
   return <Provider value={{ appState, appDispatch }}>{children}</Provider>
 }
-
-export { store, AppStateProvider }
