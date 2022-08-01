@@ -35,8 +35,8 @@ export default function BusMarker({ pos, lineCode }) {
               appDispatch({
                 type: 'toggleLayer',
                 payload: {
-                  lineId: parseInt(lineId),
-                  transform: ~appState.layers.busRoute.indexOf(lineId) ? 'remove' : 'add',
+                  lineId: parseInt(lineCode),
+                  transform: ~appState.layers.busRoute.indexOf(lineCode) ? 'remove' : 'add',
                   layer: 'busRoute'
                 }
               })
