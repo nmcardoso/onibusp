@@ -1,4 +1,4 @@
-svg = """
+SVG_TEMPLATE = """
 <svg width="20" height="35" viewBox="0 0 20 35" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <title>map-marker</title>
   <defs>
@@ -16,75 +16,160 @@ svg = """
 </svg>
 """.lstrip()
 
+
+# tool: https://www.color-hex.com/color/5f2867
+COLORS = {
+  'blue': {
+    'initial_color': '#1DABFC', 
+    'final_color': '#076EA8',
+    'circle_color': '#000',
+    'stroke_color': '#000',
+    'fill_opacity': '.54',
+  },
+  'blue-light': {
+    'initial_color': '#1DABFC', 
+    'final_color': '#076EA8', 
+    'circle_color': '#FFF',
+    'stroke_color': '#000',
+    'fill_opacity': '.62',
+  },
+  'red': {
+    'initial_color': '#FB7468', 
+    'final_color': '#E8443C', 
+    'circle_color': '#000',
+    'stroke_color': '#000',
+    'fill_opacity': '.54',
+  },
+  'red-light': {
+    'initial_color': '#FB7468', 
+    'final_color': '#E8443C', 
+    'circle_color': '#FFF',
+    'stroke_color': '#000',
+    'fill_opacity': '.62',
+  },
+  'green': {
+    'initial_color': '#50DE40', 
+    'final_color': '#12944A', 
+    'circle_color': '#000',
+    'stroke_color': '#000',
+    'fill_opacity': '.54',
+  },
+  'green-light': {
+    'initial_color': '#50DE40', 
+    'final_color': '#12944A', 
+    'circle_color': '#FFF',
+    'stroke_color': '#000',
+    'fill_opacity': '.62',
+  },
+  'purple': {
+    'initial_color': '#943FA2',
+    'final_color': '#5F2867', 
+    'circle_color': '#000',
+    'stroke_color': '#000',
+    'fill_opacity': '.54',
+  },
+  'purple-light': {
+    'initial_color': '#943FA2', 
+    'final_color': '#5F2867', 
+    'circle_color': '#FFF',
+    'stroke_color': '#000',
+    'fill_opacity': '.62',
+  },
+  'brown': {
+    'initial_color': '#56331f', 
+    'final_color': '#301d11', 
+    'circle_color': '#000',
+    'stroke_color': '#000',
+    'fill_opacity': '.54',
+  },
+  'brown-light': {
+    'initial_color': '#56331f', 
+    'final_color': '#301d11', 
+    'circle_color': '#FFF',
+    'stroke_color': '#000',
+    'fill_opacity': '.62',
+  },
+  'dark-green': {
+    'initial_color': '#007657', 
+    'final_color': '#004331', 
+    'circle_color': '#000',
+    'stroke_color': '#000',
+    'fill_opacity': '.54',
+  },
+  'dark-green-light': {
+    'initial_color': '#007657', 
+    'final_color': '#004331', 
+    'circle_color': '#FFF',
+    'stroke_color': '#000',
+    'fill_opacity': '.62',
+  },
+  'pink': {
+    'initial_color': '#ee0c8c', 
+    'final_color': '#bd096f', 
+    'circle_color': '#000',
+    'stroke_color': '#000',
+    'fill_opacity': '.54',
+  },
+  'pink-light': {
+    'initial_color': '#ee0c8c', 
+    'final_color': '#bd096f', 
+    'circle_color': '#FFF',
+    'stroke_color': '#000',
+    'fill_opacity': '.62',
+  },
+  'water-green': {
+    'initial_color': '#04b1ac', 
+    'final_color': '#026f6c', 
+    'circle_color': '#000',
+    'stroke_color': '#000',
+    'fill_opacity': '.54',
+  },
+  'water-green-light': {
+    'initial_color': '#04b1ac', 
+    'final_color': '#026f6c', 
+    'circle_color': '#FFF',
+    'stroke_color': '#000',
+    'fill_opacity': '.62',
+  },
+  'orange': {
+    'initial_color': '#fb9119', 
+    'final_color': '#e17700', 
+    'circle_color': '#000',
+    'stroke_color': '#000',
+    'fill_opacity': '.54',
+  },
+  'orange-light': {
+    'initial_color': '#fb9119', 
+    'final_color': '#e17700', 
+    'circle_color': '#FFF',
+    'stroke_color': '#000',
+    'fill_opacity': '.62',
+  },
+  'wine': {
+    'initial_color': '#80193b', 
+    'final_color': '#660022', 
+    'circle_color': '#000',
+    'stroke_color': '#000',
+    'fill_opacity': '.54',
+  },
+  'wine-light': {
+    'initial_color': '#80193b', 
+    'final_color': '#660022', 
+    'circle_color': '#FFF',
+    'stroke_color': '#000',
+    'fill_opacity': '.62',
+  },
+}
+
 def main():
-  colors = [
-    ('#F8AA3B', '#DF6800'),
-    ('#F7996E', '#F57A3D')
-  ]
+  # colors = [
+  #   ('#F8AA3B', '#DF6800'),
+  #   ('#F7996E', '#F57A3D')
+  # ]
 
-  # tool: https://www.color-hex.com/color/5f2867
-  colors = {
-    'blue': {
-      'initial_color': '#1DABFC', 
-      'final_color': '#076EA8',
-      'circle_color': '#000',
-      'stroke_color': '#000',
-      'fill_opacity': '.54',
-    },
-    'blue-light': {
-      'initial_color': '#1DABFC', 
-      'final_color': '#076EA8', 
-      'circle_color': '#FFF',
-      'stroke_color': '#000',
-      'fill_opacity': '.62',
-    },
-    'red': {
-      'initial_color': '#FB7468', 
-      'final_color': '#E8443C', 
-      'circle_color': '#000',
-      'stroke_color': '#000',
-      'fill_opacity': '.54',
-    },
-    'red-light': {
-      'initial_color': '#FB7468', 
-      'final_color': '#E8443C', 
-      'circle_color': '#FFF',
-      'stroke_color': '#000',
-      'fill_opacity': '.62',
-    },
-    'green': {
-      'initial_color': '#50DE40', 
-      'final_color': '#12944A', 
-      'circle_color': '#000',
-      'stroke_color': '#000',
-      'fill_opacity': '.54',
-    },
-    'green-light': {
-      'initial_color': '#50DE40', 
-      'final_color': '#12944A', 
-      'circle_color': '#FFF',
-      'stroke_color': '#000',
-      'fill_opacity': '.62',
-    },
-    'purple': {
-      'initial_color': '#943FA2', 
-      'final_color': '#5F2867', 
-      'circle_color': '#000',
-      'stroke_color': '#000',
-      'fill_opacity': '.54',
-    },
-    'purple-light': {
-      'initial_color': '#943FA2', 
-      'final_color': '#5F2867', 
-      'circle_color': '#FFF',
-      'stroke_color': '#000',
-      'fill_opacity': '.62',
-    }
-  }
-
-  for name, params in colors.items():
+  for name, params in COLORS.items():
     with open(f'../public/assets/img/marker-{name}.svg', 'w') as fp:
-      fp.write(svg.format(**params))
+      fp.write(SVG_TEMPLATE.format(**params))
 
 
 if __name__ == '__main__':
