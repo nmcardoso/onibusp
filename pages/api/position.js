@@ -2,7 +2,7 @@
 import axios from 'axios'
 import { wrapper } from 'axios-cookiejar-support'
 import { CookieJar } from 'tough-cookie'
-import { BUS_LINES_ARRAY } from '../../utils/constants'
+import { BL_IDS } from '../../utils/constants'
 
 const jar = new CookieJar()
 
@@ -28,6 +28,11 @@ const auth = async () => {
   }
 }
 
+// força os ônibus circulares a terem o mesmo código de linha mapeando
+// o código de um para outro
+let maskedIds = [...BL_IDS]
+maskedIds[BL_IDS.indexOf(35313)] = 2545
+
 let lastResponse = null
 let cachedResponse = null
 
@@ -38,12 +43,12 @@ export default async function handler(req, res) {
 
     const now = new Date()
     if (!lastResponse || lastResponse < now - 3200) {
-      const requests = BUS_LINES_ARRAY.map(lineCode => client.get(posUrl(lineCode)))
+      const requests = BL_IDS.map(lineId => client.get(posUrl(lineId)))
       const responses = await Promise.all(requests)
       const data = responses.map(({ data }) => data)
 
       const aggregate = data.map((v, i) => {
-        v['cl'] = BUS_LINES_ARRAY[i]
+        v['cl'] = maskedIds[i]
         return v
       })
 

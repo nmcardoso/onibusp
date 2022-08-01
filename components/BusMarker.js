@@ -2,7 +2,7 @@ import L, { marker } from 'leaflet'
 import { Marker, Popup } from 'react-leaflet'
 import { useContext } from 'react'
 import { store } from '../utils/store'
-import { BUS_LINES } from '../utils/constants'
+import { BL_UNIQUE } from '../utils/constants'
 
 
 const getIcon = (iconColor) => L.icon({
@@ -15,12 +15,17 @@ const getIcon = (iconColor) => L.icon({
 export default function BusMarker({ pos, lineCode }) {
   const appContext = useContext(store)
   const { appState, appDispatch } = appContext
+  const lineInfo = BL_UNIQUE.find(({ lineId }) => lineId == lineCode)
+
+  if (!lineInfo) return null
 
   return (
-    <Marker position={pos} icon={getIcon(BUS_LINES[lineCode].iconColor)}>
+    <Marker
+      icon={getIcon(lineInfo.iconColor)}
+      position={pos}>
       <Popup>
         <div>
-          {BUS_LINES[lineCode].displayName}
+          {lineInfo.displayName}
         </div>
         <div className="has-text-centered">
           <button
@@ -31,7 +36,7 @@ export default function BusMarker({ pos, lineCode }) {
                 type: 'toggleBusRoute',
                 payload: {
                   id: lineCode,
-                  show: !appState.control[parseInt(lineCode)].route
+                  show: !appState.control[lineCode].route
                 }
               })
             }}>

@@ -7,7 +7,7 @@ const persistStateAsync = (state) => {
   })
 }
 
-export const SCHEMA_VERSION = 1
+export const SCHEMA_VERSION = 2
 
 const initialState = {
   schemaVersion: SCHEMA_VERSION,
@@ -34,6 +34,62 @@ const initialState = {
     },
     2545: {
       bus: true,
+      route: false
+    },
+    630: {
+      bus: false,
+      route: false
+    },
+    33398: {
+      bus: false,
+      route: false
+    },
+    657: {
+      bus: false,
+      route: false
+    },
+    33425: {
+      bus: false,
+      route: false
+    },
+    1330: {
+      bus: false,
+      route: false
+    },
+    34098: {
+      bus: false,
+      route: false
+    },
+    1332: {
+      bus: false,
+      route: false
+    },
+    34100: {
+      bus: false,
+      route: false
+    },
+    1376: {
+      bus: false,
+      route: false
+    },
+    34144: {
+      bus: false,
+      route: false
+    },
+    472: {
+      bus: false,
+      route: false
+    },
+    33240: {
+      bus: false,
+      route: false
+    },
+    2254: {
+      bus: false,
+      route: false
+    },
+    35022: {
+      bus: false,
       route: false
     }
   },

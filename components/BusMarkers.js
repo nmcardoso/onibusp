@@ -28,6 +28,7 @@ export default function BusMarkers() {
   }
 
   if (status == 'error') {
+    // TODO: handle error
     console.error(error)
     return <></>
   }

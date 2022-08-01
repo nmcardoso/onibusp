@@ -1,7 +1,6 @@
 import { TbRoute } from 'react-icons/tb'
 import MapControllerButton from './MapControllerButton'
-import { BUS_LINES } from '../utils/constants'
-import { MdCheck, MdClose } from 'react-icons/md'
+import { BL_UNIQUE } from '../utils/constants'
 import { useState, useContext } from 'react'
 import { store } from '../utils/store'
 import NonBubblingComponent from './NonBubblingComponent'
@@ -36,16 +35,16 @@ export default function BusRouteController() {
         title="Selecionar Rotas"
         open={isDrawerOpen}
         onClose={toggleDrawer}>
-        {Object.entries(BUS_LINES).map(([key, value]) => (
+        {BL_UNIQUE.map(({ lineId, displayName, iconColor }) => (
           <MyDrawer.IconSplitPane
-            key={key}
-            onClick={e => handleClick(e, key)}
-            active={appState.control[parseInt(key)].route}
-            imgSrc={`/assets/img/marker-${value.iconColor}.svg`}>
+            key={lineId}
+            onClick={e => handleClick(e, lineId)}
+            active={appState.control[lineId].route}
+            imgSrc={`/assets/img/marker-${iconColor}.svg`}>
             <span
               className="ml-1"
               style={{ fontSize: '0.88rem' }}>
-              {value.displayName}
+              {displayName}
             </span>
           </MyDrawer.IconSplitPane>
         ))}

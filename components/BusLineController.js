@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react'
 import { RiMapPinAddFill } from 'react-icons/ri'
-import { BUS_LINES } from '../utils/constants'
+import { BL_UNIQUE } from '../utils/constants'
 import MapControllerButton from './MapControllerButton'
 import { store } from '../utils/store'
 import MyDrawer from './MyDrawer'
@@ -35,16 +35,16 @@ export default function BusLineController() {
         title="Selecionar Linhas"
         open={isDrawerOpen}
         onClose={toggleDrawer}>
-        {Object.entries(BUS_LINES).map(([key, value]) => (
+        {BL_UNIQUE.map(({ lineId, iconColor, displayName }) => (
           <MyDrawer.IconSplitPane
-            key={key}
-            onClick={e => handleClick(e, key)}
-            active={appState.control[parseInt(key)].bus}
-            imgSrc={`/assets/img/marker-${value.iconColor}.svg`}>
+            key={lineId}
+            onClick={e => handleClick(e, lineId)}
+            active={appState.control[lineId].bus}
+            imgSrc={`/assets/img/marker-${iconColor}.svg`}>
             <span
               className="ml-1"
               style={{ fontSize: '0.88rem' }}>
-              {value.displayName}
+              {displayName}
             </span>
           </MyDrawer.IconSplitPane>
         ))}

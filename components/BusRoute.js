@@ -1,6 +1,6 @@
 import { Polyline, Popup } from 'react-leaflet'
 import axios from 'axios'
-import { BUS_LINES } from '../utils/constants'
+import { BL_UNIQUE } from '../utils/constants'
 import { store } from '../utils/store'
 import { useEffect, useState, useContext } from 'react'
 
@@ -25,7 +25,9 @@ export default function BusRoute({ lineCode }) {
     return (
       <Polyline
         positions={positions}
-        pathOptions={{ color: BUS_LINES[lineCode].pathColor }}>
+        pathOptions={{
+          color: BL_UNIQUE.find(({ lineId }) => lineId == lineCode).pathColor
+        }}>
         <Popup>
           <button
             className="button is-ghost is-small"
