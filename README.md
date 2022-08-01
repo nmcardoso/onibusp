@@ -10,7 +10,7 @@
   <a aria-label="Nextjs logo" href="https://github.com/vercel/next.js/discussions">
     <img alt="" src="https://img.shields.io/badge/MADE%20WITH%20NEXTJS-blueviolet.svg?style=for-the-badge&logo=Next.js&labelColor=000000&logoWidth=20">
   </a>
-  <a aria-label="Nextjs logo" href="https://github.com/vercel/next.js/discussions">
+  <a aria-label="Leaflet logo" href="https://leafletjs.com">
     <img alt="" src="https://img.shields.io/badge/MADE%20WITH%20LEAFLET-blue.svg?style=for-the-badge&logo=leaflet&labelColor=000&logoWidth=20&logoColor=green">
   </a>
 </p>
@@ -19,8 +19,8 @@
   <a aria-label="Vercel logo" href="https://vercel.com">
     <img src="https://img.shields.io/badge/POWERED%20BY%20VERCEL-000.svg?style=for-the-badge&logo=vercel&labelColor=000&logoWidth=20">
   </a>
-  <a aria-label="Vercel logo" href="https://vercel.com">
-    <img src="https://img.shields.io/badge/POWERED%20BY%20OSP-000.svg?style=for-the-badge&logo=openstreetmap&labelColor=000&logoWidth=20">
+  <a aria-label="Vercel logo" href="https://openstreetmap.org">
+    <img src="https://img.shields.io/badge/POWERED%20BY%20OSM-000.svg?style=for-the-badge&logo=openstreetmap&labelColor=000&logoWidth=20">
   </a>
 </p>
 
