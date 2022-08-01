@@ -68,8 +68,6 @@ const handlePostRequest = async (req, res) => {
 
     const lineIds = req.body?.q || []
 
-    console.log(lineIds)
-
     const cachedData = CACHE.filter(({ data, time }) => {
       return lineIds.includes(data.cl) && !(time < now - CACHE_DURATION)
     }).map(({ data }) => data)
