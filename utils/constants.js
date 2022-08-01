@@ -47,59 +47,53 @@ export const BL = [
     iconColor: 'water-green',
     pathColor: '#16c8c3'
   },
-  { // 177H-10-1
-    lineId: 630,
+  { // 177H-10-2
+    lineId: 33398,
     displayName: '177H-10 (Metrô Santana)',
     iconColor: 'wine',
     pathColor: '#660022'
   },
-  { // 177H-10-2
-    lineId: 33398,
+  { // 177H-10-1
+    lineId: 630,
     displayName: '177H-10 (Terminal P2)',
     iconColor: 'wine-light',
     pathColor: '#80193b'
   },
-  { // 701U-10-1
-    lineId: 657,
+  { // 701U-10-2
+    lineId: 33425,
     displayName: '701H-10 (Metrô Santana)',
     iconColor: 'purple',
     pathColor: '#5F2867'
   },
-  { // 701U-10-2
-    lineId: 33425,
+  { // 701U-10-1
+    lineId: 657,
     displayName: '701H-10 (Terminal P2)',
     iconColor: 'purple-light',
     pathColor: '#943FA2'
   },
-  { // 702U-10-1
-    lineId: 1330,
+  { // 702U-10-2
+    lineId: 34098,
     displayName: '702U-10 (Terminal P2)',
     iconColor: 'orange-light',
     pathColor: '#fb9119'
   },
-  { // 702U-10-2
-    lineId: 34098,
+  { // 702U-10-1
+    lineId: 1330,
     displayName: '702U-10 (Term. D. Pedro II)',
     iconColor: 'orange',
     pathColor: '#e17700'
   },
-  { // 7181-10-1
-    lineId: 1332,
+  { // 7181-10-2
+    lineId: 34100,
     displayName: '7181-10 (Terminal P2)',
     iconColor: 'dark-green-light',
     pathColor: '#007657'
   },
-  { // 7181-10-2
-    lineId: 34100,
+  { // 7181-10-1
+    lineId: 1332,
     displayName: '7181-10 (T. Princ. Isabel)',
     iconColor: 'dark-green',
     pathColor: '#004331'
-  },
-  { // 7411-10-1
-    lineId: 1376,
-    displayName: '7411-10 (Circular)',
-    iconColor: 'green',
-    pathColor: '#12944A'
   },
   { // 7411-10-2
     lineId: 34144,
@@ -107,26 +101,32 @@ export const BL = [
     iconColor: 'green',
     pathColor: '#12944A'
   },
-  { // 7725-10-1
-    lineId: 472,
+  { // 7411-10-1
+    lineId: 1376,
+    displayName: '7411-10 (Circular)',
+    iconColor: 'green',
+    pathColor: '#12944A'
+  },
+  { // 7725-10-2
+    lineId: 33240,
     displayName: '7725-10 (Rio Pequeno)',
     iconColor: 'brown-light',
     pathColor: '#56331f',
   },
-  { // 7725-10-2
-    lineId: 33240,
+  { // 7725-10-1
+    lineId: 472,
     displayName: '7725-10 (Terminal Lapa)',
     iconColor: 'brown',
     pathColor: '#301d11',
   },
-  { // 809U-10-1
-    lineId: 2254,
-    displayName: '809U-10 (Terminal P2)',
-    iconColor: 'pink',
-    pathColor: '#ee0c8c'
-  },
   { // 809U-10-2
     lineId: 35022,
+    displayName: '809U-10 (Terminal P2)',
+    iconColor: 'pink-light',
+    pathColor: '#ee0c8c'
+  },
+  { // 809U-10-1
+    lineId: 2254,
     displayName: '809U-10 (Metrô B. Funda)',
     iconColor: 'pink',
     pathColor: '#bd096f'
