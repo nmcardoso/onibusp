@@ -12,13 +12,14 @@ export default function BusLineController() {
   const { appState, appDispatch } = appContext
   const [isDrawerOpen, setDrawerState] = useState(false)
   const toggleDrawer = () => setDrawerState(!isDrawerOpen)
-  const handleClick = (e, key) => {
+  const handleClick = (e, lineId) => {
     e.stopPropagation()
     appDispatch({
-      type: 'toggleBusLine',
+      type: 'toggleLayer',
       payload: {
-        id: parseInt(key),
-        show: !appState.control[parseInt(key)].bus
+        lineId: parseInt(lineId),
+        transform: ~appState.layers.busPosition.indexOf(lineId) ? 'remove' : 'add',
+        layer: 'busPosition'
       }
     })
   }
@@ -39,7 +40,7 @@ export default function BusLineController() {
           <MyDrawer.IconSplitPane
             key={lineId}
             onClick={e => handleClick(e, lineId)}
-            active={appState.control[lineId].bus}
+            active={~appState.layers.busPosition.indexOf(lineId)}
             imgSrc={`/assets/img/marker-${iconColor}.svg`}>
             <span
               className="ml-1"

@@ -7,12 +7,9 @@ export default function BusRoutes() {
   const appContext = useContext(store)
   const { appState } = appContext
 
-  let routes = []
-  for (let lineId in appState.control) {
-    if (appState.control[lineId].route) {
-      routes.push(<BusRoute key={lineId} lineCode={lineId} />)
-    }
-  }
+  const routes = appState.layers.busRoute.map(lineId => (
+    <BusRoute key={lineId} lineCode={lineId} />
+  ))
 
   return (
     <>

@@ -33,14 +33,15 @@ export default function BusMarker({ pos, lineCode }) {
             onClick={e => {
               e.stopPropagation()
               appDispatch({
-                type: 'toggleBusRoute',
+                type: 'toggleLayer',
                 payload: {
-                  id: lineCode,
-                  show: !appState.control[lineCode].route
+                  lineId: parseInt(lineId),
+                  transform: ~appState.layers.busRoute.indexOf(lineId) ? 'remove' : 'add',
+                  layer: 'busRoute'
                 }
               })
             }}>
-            {appState.control[lineCode].route ? 'Ocultar Percurso' : 'Ver Percurso'}
+            {~appState.layers.busRoute.indexOf(lineCode) ? 'Ocultar Percurso' : 'Ver Percurso'}
           </button>
         </div>
       </Popup>
