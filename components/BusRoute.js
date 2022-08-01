@@ -7,7 +7,7 @@ import { useEffect, useState, useContext } from 'react'
 export default function BusRoute({ lineCode }) {
   const [positions, setPositions] = useState(null)
   const appContext = useContext(store)
-  const { appDispatch } = appContext
+  const { appState, appDispatch } = appContext
 
   useEffect(() => {
     const handle = async () => {
@@ -34,10 +34,11 @@ export default function BusRoute({ lineCode }) {
             onClick={e => {
               e.stopPropagation()
               appDispatch({
-                type: 'toggleBusRoute',
+                type: 'toggleLayer',
                 payload: {
-                  id: lineCode,
-                  show: false
+                  lineId: parseInt(lineCode),
+                  transform: ~appState.layers.busRoute.indexOf(lineCode) ? 'remove' : 'add',
+                  layer: 'busRoute'
                 }
               })
             }}>
