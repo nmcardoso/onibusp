@@ -1,4 +1,28 @@
-<center><h1>ÔNIBUS USP</h1></center>
+<p align="center">
+  <img src="art/logo.png" height="128" />
+  <h1 align="center">Ônibus USP</h1>
+</p>
+
+<p align="center">
+  <a aria-label="License" href="https://github.com/bususp/bususp/blob/main/LICENSE">
+    <img alt="" src="https://img.shields.io/badge/LICENSE-GNU--GPLv3-sucess?style=for-the-badge&labelColor=000">
+  </a>
+  <a aria-label="Nextjs logo" href="https://github.com/vercel/next.js/discussions">
+    <img alt="" src="https://img.shields.io/badge/MADE%20WITH%20NEXTJS-blueviolet.svg?style=for-the-badge&logo=Next.js&labelColor=000000&logoWidth=20">
+  </a>
+  <a aria-label="Nextjs logo" href="https://github.com/vercel/next.js/discussions">
+    <img alt="" src="https://img.shields.io/badge/MADE%20WITH%20LEAFLET-blue.svg?style=for-the-badge&logo=leaflet&labelColor=000&logoWidth=20&logoColor=green">
+  </a>
+</p>
+
+<p align="center">
+  <a aria-label="Vercel logo" href="https://vercel.com">
+    <img src="https://img.shields.io/badge/POWERED%20BY%20VERCEL-000.svg?style=for-the-badge&logo=vercel&labelColor=000&logoWidth=20">
+  </a>
+  <a aria-label="Vercel logo" href="https://vercel.com">
+    <img src="https://img.shields.io/badge/POWERED%20BY%20OSP-000.svg?style=for-the-badge&logo=openstreetmap&labelColor=000&logoWidth=20">
+  </a>
+</p>
 
 # API SPTrans
 
@@ -276,6 +300,12 @@ Recurso SPTrans: `http://api.olhovivo.sptrans.com.br/v2.1/Linha/Buscar?termosBus
 ]
 ```
 
-Cores:
-#1092AA (Azul)
-#F8B026 (Amarelo)
+
+## Links úteis
+https://colordesigner.io/random-color-generator
+
+https://www.color-hex.com/color/05ded8
+
+https://www.random.org/colors/hex
+
+https://coolors.co/palettes/popular/orange
