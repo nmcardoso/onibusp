@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "Onibus USP",
+      "package_name": "com.github.onibusp.twa",
+      "sha256_cert_fingerprints": [
+        "C0:E4:E2:97:90:AA:ED:BC:41:21:52:48:5D:A2:49:4E:2B:DD:A4:1C:16:0F:BA:63:81:7B:F6:07:46:F7:BA:EC"
+      ]
+    }
+  }
+]
