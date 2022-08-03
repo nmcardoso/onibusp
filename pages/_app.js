@@ -4,6 +4,7 @@ import Head from 'next/head'
 import { APP_NAME, APP_DESCRIPTION, THEME_COLOR } from '../utils/constants'
 import '../styles/bulma.scss'
 import 'react-modern-drawer/dist/index.css'
+import Script from 'next/script'
 // import { ReactQueryDevtools } from 'react-query/devtools'
 
 const queryClient = new QueryClient()
@@ -63,6 +64,22 @@ function MyApp({ Component, pageProps }) {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
       </Head>
 
+      {process.env.NODE_ENV === 'production' &&
+        <>
+          <Script
+            strategy="afterInteractive"
+            src="https://www.googletagmanager.com/gtag/js?id=G-CXQC4VY3GC" />
+          <Script
+            id="gtag-init"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `window.dataLayer = window.dataLayer || [];
+                      function gtag(){dataLayer.push(arguments);}
+                      gtag('js', new Date());
+                      gtag('config', 'G-CXQC4VY3GC');`
+            }} />
+        </>
+      }
       <QueryClientProvider client={queryClient}>
         <Component {...pageProps} />
       </QueryClientProvider>
