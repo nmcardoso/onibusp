@@ -24,6 +24,69 @@
   </a>
 </p>
 
+
+# Sobre
+
+**Onibusp** é um aplicativo para desenvolvido para rastreamento das linhas municipais de ônibus que passam pela Cidade Universitária "Armando de Salles Oliveira" (Campus USP-Capital). Este [monorepo](https://en.wikipedia.org/wiki/Monorepo) hospeda o front-end e o back-end da aplicação.
+
+
+
+# Arquitetura
+
+## Frontend
+
+O frontend é uma aplicação [Nextjs](https://nextjs.org/) e usa a biblioteca [react-leaflet](https://react-leaflet.js.org/) para fazer ponte com o [leaflet](https://leafletjs.com/).
+
+## Backend
+
+O backend é composto for funções lambda (serverless) hospedadas no [Vercel](https://vercel.com/).
+
+
+### Especificação da API
+
+#### `POST` /api/position
+
+Obtêm a posição dos ônibus a partir da requisão à API da SPTrans. Esta rota armazena os dados obtidos da SPTrans em um **cache** com 4.5 segundos de retenção. Isto é, a frequencia global de aquisição de dados à API do SPTrans é de 4.5 segundos independentemente do número de usuários do aplicativo.
+
+Modelo do payload da requisição:
+
+```json
+{
+  "q": [int]
+}
+```
+
+|chave|descrição|
+|---|---|
+|`q`|vetor de inteiros contendo os ids das linhas a serem monitoradas|
+
+
+
+# Desenvolvimento
+
+## Requisitos
+
+|pacote|versão|
+|---|---|
+|Nodejs|^16.13.1|
+|npm|^8.12.2|
+
+## Primeiros passos
+
+Clone este repositório
+
+```git clone ```
+
+As dependências definidas em `package.json` devem ser instaladas a partir do comando:
+
+```npm i```
+
+Depois disso, digite o seguinte comando para executar a aplicação:
+
+```npm run dev```
+
+
+
 # API SPTrans
 
 Aqui tem um sumário de alguns recursos disponibilizados pela SPTrans que são relevantes no desenvolvimento desta aplicação
@@ -50,13 +113,13 @@ Recurso SPTrans: `http://api.olhovivo.sptrans.com.br/v2.1/Linha/Buscar?termosBus
 
 |Chave|Descrição|
 |---|---|
-|`[int] cl`|Código identificador da linha. Este é um código identificador único de cada linha do sistema (por sentido de operação)|
-|`[bool] lc`|Indica se uma linha opera no modo circular (sem um terminal secundário)|
-|`[str] lt`|Informa a primeira parte do letreiro numérico da linha|
-|`[int] tl`|Informa a segunda parte do letreiro numérico da linha, que indica se a linha opera nos modos: **BASE (10), ATENDIMENTO (21, 23, 32, 41)**|
-|`[int] sl`|Informa o sentido ao qual a linha atende, onde 1 significa Terminal Principal para Terminal Secundário e 2 para Terminal Secundário para Terminal Principal|
-|`[str] tp`|Informa o letreiro descritivo da linha no sentido Terminal Principal para Terminal Secundário|
-|`[str] ts`|Informa o letreiro descritivo da linha no sentido Terminal Secundário para Terminal Principal|
+|`cl`|Código identificador da linha. Este é um código identificador único de cada linha do sistema (por sentido de operação)|
+|`lc`|Indica se uma linha opera no modo circular (sem um terminal secundário)|
+|`lt`|Informa a primeira parte do letreiro numérico da linha|
+|`tl`|Informa a segunda parte do letreiro numérico da linha, que indica se a linha opera nos modos: **BASE (10), ATENDIMENTO (21, 23, 32, 41)**|
+|`sl`|Informa o sentido ao qual a linha atende, onde 1 significa Terminal Principal para Terminal Secundário e 2 para Terminal Secundário para Terminal Principal|
+|`tp`|Informa o letreiro descritivo da linha no sentido Terminal Principal para Terminal Secundário|
+|`ts`|Informa o letreiro descritivo da linha no sentido Terminal Secundário para Terminal Principal|
 
 ### Respostas
 
