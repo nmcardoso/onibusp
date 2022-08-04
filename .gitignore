@@ -35,3 +35,7 @@ yarn-error.log*
 **/public/workbox-*.js*
 **/public/sw.js*
 **/public/fallback-*.js
+
+# bubblewrap generated
+/android/*
+!/android/twa-manifest.json
