@@ -1,5 +1,5 @@
 import L from 'leaflet'
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 
 export default function NonBubblingComponent({
   children,
@@ -9,10 +9,12 @@ export default function NonBubblingComponent({
 }) {
   const r = useRef(null)
 
-  if (r.current && prevent) {
-    L.DomEvent.disableClickPropagation(r.current)
-    L.DomEvent.disableScrollPropagation(r.current)
-  }
+  useEffect(() => {
+    if (r.current && prevent) {
+      L.DomEvent.disableClickPropagation(r.current)
+      L.DomEvent.disableScrollPropagation(r.current)
+    }
+  }, [prevent])
 
   return (
     <div
