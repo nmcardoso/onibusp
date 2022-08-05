@@ -2,7 +2,7 @@ import { BiTargetLock } from 'react-icons/bi'
 import MapControllerButton from './MapControllerButton'
 import NonBubblingComponent from './NonBubblingComponent'
 import { useState } from 'react'
-import { Circle, useMapEvents } from 'react-leaflet'
+import { Circle, CircleMarker, useMapEvents } from 'react-leaflet'
 
 
 export default function LocationController() {
@@ -56,7 +56,14 @@ export default function LocationController() {
       </MapControllerButton>
 
       {isWatching && position.latlng && <>
-        <Circle center={position.latlng} radius={position.acc} />
+        <CircleMarker
+          center={position.latlng}
+          radius={4}
+          fillOpacity={1} />
+        <Circle
+          center={position.latlng}
+          radius={position.acc > 25 ? position.acc : 25}
+          weight={2} />
       </>}
     </NonBubblingComponent>
   )
