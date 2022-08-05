@@ -27,6 +27,8 @@
 
 # Sobre
 
+<img src="public/assets/screenshots/6.jpg" alt="screenshot" align="right" height="420px">
+
 **Onibusp** é um aplicativo para desenvolvido para rastreamento das linhas municipais de ônibus que passam pela Cidade Universitária "Armando de Salles Oliveira" (Campus USP-Capital). Este [monorepo](https://en.wikipedia.org/wiki/Monorepo) hospeda o front-end e o back-end da aplicação.
 
 
