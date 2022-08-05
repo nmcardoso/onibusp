@@ -26,5 +26,55 @@
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait",
-  "splash_pages": null
+  "splash_pages": null,
+  "categories": [
+    "maps",
+    "navigation",
+    "transport"
+  ],
+  "screenshots": [
+    {
+      "src": "/assets/screenshots/1.jpg",
+      "type": "image/jpg",
+      "platform": "narrow",
+      "label": "Acompanhe a posição de cada ônibus no campus"
+    },
+    {
+      "src": "/assets/screenshots/2.jpg",
+      "type": "image/jpg",
+      "platform": "narrow",
+      "label": "Veja o percurso de cada ônibus"
+    },
+    {
+      "src": "/assets/screenshots/3.jpg",
+      "type": "image/jpg",
+      "platform": "narrow",
+      "label": "Selecione quais linhas deseja acompanhar"
+    },
+    {
+      "src": "/assets/screenshots/4.jpg",
+      "type": "image/jpg",
+      "platform": "narrow",
+      "label": "Selecione quais percursos deseja visualizar"
+    },
+    {
+      "src": "/assets/screenshots/5.jpg",
+      "type": "image/jpg",
+      "platform": "narrow",
+      "label": "Customize o aplicativo do seu jeito"
+    },
+    {
+      "src": "/assets/screenshots/6.jpg",
+      "type": "image/jpg",
+      "platform": "narrow",
+      "label": "Todas as linhas de ônibus na palma de sua mão"
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=net.natanael.onibusp",
+      "id": "net.natanael.onibusp"
+    }
+  ]
 }
