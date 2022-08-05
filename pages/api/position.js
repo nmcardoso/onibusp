@@ -2,13 +2,16 @@
 import axios from 'axios'
 import { wrapper } from 'axios-cookiejar-support'
 import { CookieJar } from 'tough-cookie'
+import { invertObject } from '../../utils/algorithm'
 
 // força os ônibus circulares a terem o mesmo código de linha mapeando
-// o código de um para outro
+// o código de um para outro.
+// Chave: linha a ser substituída. Valor: linha substituta
 const MASK = {
   35313: 2524, // 8032-10
   34144: 1376, // 7411-10
 }
+const REVERSE_MASK = invertObject(MASK)
 
 const posUrl = c => `Posicao/Linha?codigoLinha=${c}`
 const authUrl = `Login/Autenticar?token=${process.env.SPTRANS_TOKEN}`
@@ -41,6 +44,8 @@ const batchFetch = async (lineIds) => {
   const data = responses.map(({ data }) => data)
   const now = new Date()
 
+  // adiciona o campo 'cl' no objeto e remapeia os ids das linhas de 
+  // ônibus circulares para o id de referência
   const preparedData = data.map((v, i) => {
     v['cl'] = lineIds[i] in MASK ? MASK[lineIds[i]] : lineIds[i]
     return v
@@ -67,6 +72,14 @@ const handlePostRequest = async (req, res) => {
     const now = new Date()
 
     const lineIds = req.body?.q || []
+
+    // adiciona os ids correspondentes das linhas de ônibus circulares 
+    // a partir do id de referência
+    for (let lineId in REVERSE_MASK) {
+      if (lineIds.includes(lineId)) {
+        lineIds.push(REVERSE_MASK[lineId])
+      }
+    }
 
     const cachedData = CACHE.filter(({ data, time }) => {
       return lineIds.includes(data.cl) && !(time < now - CACHE_DURATION)
