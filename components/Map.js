@@ -22,6 +22,8 @@ export default function Map() {
         doubleClickZoom={false}
         scrollWheelZoom={true}
         zoomControl={false}
+        zoomSnap={0.25}
+        zoomDelta={0.25}
       >
         <TileLayer
           url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
