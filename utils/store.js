@@ -7,7 +7,7 @@ const persistStateAsync = (state) => {
   })
 }
 
-export const SCHEMA_VERSION = 3
+export const SCHEMA_VERSION = 1
 
 const initialState = {
   schemaVersion: SCHEMA_VERSION,
@@ -18,7 +18,8 @@ const initialState = {
   config: {
     showZoomController: false,
     showBusLineController: true,
-    showBusRouteController: true
+    showBusRouteController: true,
+    showLocationController: true
   }
 }
 

@@ -42,7 +42,8 @@ const About = () => (
 const configs = [
   ['showZoomController', 'Mostrar botão de zoom'],
   ['showBusLineController', 'Mostrat botão de linhas'],
-  ['showBusRouteController', 'Mostrat botão de rotas']
+  ['showBusRouteController', 'Mostrat botão de rotas'],
+  ['showLocationController', 'Mostrar botão de localização']
 ]
 
 
