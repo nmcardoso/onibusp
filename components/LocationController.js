@@ -11,10 +11,15 @@ export default function LocationController() {
     acc: null
   })
   const [isWatching, setWatching] = useState(false)
+  const [shouldCenter, setShouldCenter] = useState(true)
 
   const map = useMapEvents({
     locationfound: e => {
       setPosition({ latlng: e.latlng, acc: e.accuracy })
+      if (shouldCenter) {
+        map.panTo(e.latlng)
+        setShouldCenter(false)
+      }
     }
   })
 
@@ -30,6 +35,7 @@ export default function LocationController() {
       })
     } else {
       map.stopLocate()
+      setShouldCenter(true)
     }
     setWatching(w)
   }
