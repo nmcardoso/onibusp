@@ -1,6 +1,6 @@
 {
   "name": "Onibus USP",
-  "description": "Localização dos ônibus que passam pelo campus da USP em tempo real",
+  "description": "Localização em tempo real dos ônibus que passam pela Cidade Universitária Armando de Salles Oliveira, campus da USP Capital",
   "short_name": "Onibus USP",
   "icons": [
     {
