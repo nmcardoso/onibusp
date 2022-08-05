@@ -2,6 +2,7 @@ import styles from '../styles/MapControllers.module.scss'
 import BusLineController from './BusLineController'
 import BusRouteController from './BusRouteController'
 import ConfigController from './ConfigController'
+import LocationController from './LocationController'
 import { store } from '../utils/store'
 import { useContext } from 'react'
 
@@ -17,6 +18,7 @@ export default function MapControllers() {
         <ConfigController />
         {appState.config.showBusLineController ? <BusLineController /> : null}
         {appState.config.showBusRouteController ? <BusRouteController /> : null}
+        <LocationController />
       </div>
     </div>
   )
