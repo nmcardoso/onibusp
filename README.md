@@ -68,10 +68,8 @@ Modelo do payload da requisição:
 
 ## Requisitos
 
-|pacote|versão|
-|---|---|
-|Nodejs|^16.13.1|
-|npm|^8.12.2|
+* [Nodejs](https://nodejs.org/en/)
+* [NPM](https://www.npmjs.com/)
 
 ## Primeiros passos
 
@@ -86,6 +84,18 @@ As dependências definidas em `package.json` devem ser instaladas a partir do co
 Depois disso, digite o seguinte comando para executar a aplicação:
 
 ```npm run dev```
+
+
+## Estrutura de diretório do projeto
+* `art`: logotipos
+* `components`: componentes React
+* `data`: dados
+* `pages`: páginas Nextjs
+* `pages/api`: funções lambda (backend)
+* `public`: arquivos estáticos que são copiados durante a compilação
+* `scripts`: scripts de automação de tarefas
+* `styles`: folhas de estilo .sass
+* `utils`: funções utilitárias usadas no frontend e no backend
 
 
 
@@ -367,10 +377,8 @@ Recurso SPTrans: `http://api.olhovivo.sptrans.com.br/v2.1/Linha/Buscar?termosBus
 
 
 ## Links úteis
-https://colordesigner.io/random-color-generator
-
-https://www.color-hex.com/color/05ded8
-
-https://www.random.org/colors/hex
-
-https://coolors.co/palettes/popular/orange
+* https://colordesigner.io/random-color-generator
+* https://www.color-hex.com/color/05ded8
+* https://www.random.org/colors/hex
+* https://coolors.co/palettes/popular/orange
+* https://www.appstorescreenshot.com
