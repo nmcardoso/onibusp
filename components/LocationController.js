@@ -20,6 +20,10 @@ export default function LocationController() {
         map.panTo(e.latlng)
         setShouldCenter(false)
       }
+    },
+    locationerror: e => {
+      setWatching(false)
+      setShouldCenter(false)
     }
   })
 
