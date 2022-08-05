@@ -14,15 +14,15 @@ const About = () => (
     <p>
       Este é um aplicativo de código aberto hospedado{' '}
       <a
-        href="https://github.com/bususp/bususp"
+        href="https://github.com/onibusp/onibusp"
         target="_BLANK"
         rel="noreferrer">
         neste repositório
       </a>{' '}
-      do Github. Sinta-se a vontade em enviar contribuição de código.
+      do Github.{' '}
       Caso tenha encontrado algum bug ou tenha alguma sujestão, envie {' '}
       <a
-        href="https://github.com/bususp/bususp/issues/new"
+        href="https://github.com/onibusp/onibusp/issues/new"
         target="_BLANK"
         rel="noreferrer">
         neste link
