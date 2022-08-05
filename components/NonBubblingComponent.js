@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react'
 export default function NonBubblingComponent({
   children,
   style = {},
-  className = {},
+  className = '',
   prevent = true
 }) {
   const r = useRef(null)
