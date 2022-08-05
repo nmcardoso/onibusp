@@ -73,17 +73,19 @@ Modelo do payload da requisição:
 
 ## Primeiros passos
 
-Clone este repositório
+1. Clone este repositório
+  
+    ```git clone https://github.com/onibusp/onibusp.git```
 
-```git clone ```
+2. Instale as dependências:
 
-As dependências definidas em `package.json` devem ser instaladas a partir do comando:
+    ```npm i```
 
-```npm i```
+3. Inicie o servidor de desenvolvimento:
 
-Depois disso, digite o seguinte comando para executar a aplicação:
+    ```npm run dev```
 
-```npm run dev```
+4. Tudo pronto para começar a programar!
 
 
 ## Estrutura de diretório do projeto
