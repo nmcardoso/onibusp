@@ -84,7 +84,7 @@ export default function ConfigController() {
           </MyDrawer.IconSplitPane>
         ))}
 
-        <MyDrawer.Heading className="mt-3">
+        <MyDrawer.Heading className="mt-4">
           Sobre
         </MyDrawer.Heading>
         <About />
