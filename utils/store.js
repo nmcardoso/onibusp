@@ -33,7 +33,7 @@ const toggleConfigAction = (state, action) => {
   return s
 }
 
-const toggleLayer = (state, action) => {
+const toggleLayerAction = (state, action) => {
   const s = { ...state }
   const layer = action.payload.layer
   let data = s.layers[layer]
@@ -55,10 +55,10 @@ export const AppStateProvider = ({ children }) => {
     switch (action.type) {
       case 'toggleConfig':
         return toggleConfigAction(state, action)
+      case 'toggleLayer':
+        return toggleLayerAction(state, action)
       case 'loadSavedState':
         return loadSavedStateAction(state, action)
-      case 'toggleLayer':
-        return toggleLayer(state, action)
       default:
         return state
     }
