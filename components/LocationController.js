@@ -30,7 +30,7 @@ export default function LocationController() {
         watch: true,
         setView: false,
         timeout: 8000,
-        maximumAge: 2000,
+        maximumAge: 3000,
         enableHighAccuracy: true
       })
     } else {
