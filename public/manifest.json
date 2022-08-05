@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
   "name": "Onibus USP",
   "description": "Localização em tempo real dos ônibus que passam pela Cidade Universitária Armando de Salles Oliveira, campus da USP Capital",
   "short_name": "Onibus USP",
