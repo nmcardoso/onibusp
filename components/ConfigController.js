@@ -3,14 +3,14 @@ import { BsGearFill } from 'react-icons/bs'
 import NonBubblingComponent from './NonBubblingComponent'
 import { useContext, useState } from 'react'
 import { store } from '../utils/store'
-import { version } from '../package.json'
+import * as pkgInfo from '../package.json'
 import { APP_NAME } from '../utils/constants'
 import MyDrawer from './MyDrawer'
 
 
 const About = () => (
   <div className="mx-2 mt-1">
-    <p><b>{APP_NAME} v{version}</b></p>
+    <p><b>{APP_NAME} v{pkgInfo.version}</b></p>
     <p>
       Este é um aplicativo de código aberto desenvolvido por {' '}
       <a
