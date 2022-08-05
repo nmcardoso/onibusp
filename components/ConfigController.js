@@ -12,14 +12,7 @@ const About = () => (
   <div className="mx-2 mt-1">
     <p><b>{APP_NAME} v{pkgInfo.version}</b></p>
     <p>
-      Este é um aplicativo de código aberto desenvolvido por {' '}
-      <a
-        href="https://github.com/nmcardoso"
-        target="_BLANK"
-        rel="noreferrer">
-        @nmcardoso
-      </a>{' '}
-      e hospedado{' '}
+      Este é um aplicativo de código aberto hospedado{' '}
       <a
         href="https://github.com/bususp/bususp"
         target="_BLANK"
@@ -37,9 +30,9 @@ const About = () => (
     </p>
     <p><b>Licença:</b> GNU-GPLv3.0</p>
     <p>
-      <b>Agradecimentos:</b> Este aplicativo foi criado usando várias
-      bibliotecas de código aberto como <i>Leaflet</i>, <i>React</i> e <i>Nextjs</i>.
-      e está acessível a todos graças aos serviços de hospedagem do <i>Vercel</i>
+      <b>Agradecimentos:</b> Este aplicativo foi criado usando várias{' '}
+      bibliotecas de código aberto como <i>Leaflet</i>, <i>React</i> e <i>Nextjs</i>{' '}
+      e está acessível a todos graças aos serviços de hospedagem do <i>Vercel</i>{' '}
       e dos webservices disponibilizados por <i>OpenStreetMap</i> e <i>SPTrans</i>.
     </p>
   </div>
