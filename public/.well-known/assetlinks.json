@@ -4,10 +4,10 @@
       "delegate_permission/common.handle_all_urls"
     ],
     "target": {
-      "namespace": "Onibus USP",
-      "package_name": "com.github.onibusp.twa",
+      "namespace": "android_app",
+      "package_name": "net.natanael.onibusp",
       "sha256_cert_fingerprints": [
-        "C0:E4:E2:97:90:AA:ED:BC:41:21:52:48:5D:A2:49:4E:2B:DD:A4:1C:16:0F:BA:63:81:7B:F6:07:46:F7:BA:EC"
+        "23:10:96:4E:C8:B2:4C:03:F0:FA:83:A9:DE:7A:7E:78:94:56:83:14:2F:53:F1:6E:DD:5C:24:4E:30:E5:1E:84"
       ]
     }
   }
