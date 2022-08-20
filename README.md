@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="art/logo.png" height="128" />
+  <img alt="Ônibus USP Logo" src="art/logo.png" width="128" height="128" />
   <h1 align="center">Ônibus USP</h1>
 </p>
 
@@ -7,19 +7,19 @@
   <a aria-label="License" href="https://github.com/bususp/bususp/blob/main/LICENSE">
     <img alt="" src="https://img.shields.io/badge/LICENSE-GNU--GPLv3-sucess?style=for-the-badge&labelColor=000">
   </a>
-  <a aria-label="Nextjs logo" href="https://github.com/vercel/next.js/discussions">
+  <a aria-label="Nextjs" href="https://github.com/vercel/next.js/discussions">
     <img alt="" src="https://img.shields.io/badge/MADE%20WITH%20NEXTJS-blueviolet.svg?style=for-the-badge&logo=Next.js&labelColor=000000&logoWidth=20">
   </a>
-  <a aria-label="Leaflet logo" href="https://leafletjs.com">
+  <a aria-label="Leaflet" href="https://leafletjs.com">
     <img alt="" src="https://img.shields.io/badge/MADE%20WITH%20LEAFLET-blue.svg?style=for-the-badge&logo=leaflet&labelColor=000&logoWidth=20&logoColor=green">
   </a>
 </p>
 
 <p align="center">
-  <a aria-label="Vercel logo" href="https://vercel.com">
+  <a aria-label="Vercel" href="https://vercel.com">
     <img src="https://img.shields.io/badge/POWERED%20BY%20VERCEL-000.svg?style=for-the-badge&logo=vercel&labelColor=000&logoWidth=20">
   </a>
-  <a aria-label="Vercel logo" href="https://openstreetmap.org">
+  <a aria-label="Open Street Map" href="https://openstreetmap.org">
     <img src="https://img.shields.io/badge/POWERED%20BY%20OSM-000.svg?style=for-the-badge&logo=openstreetmap&labelColor=000&logoWidth=20">
   </a>
 </p>
@@ -49,18 +49,6 @@ O backend é composto for funções lambda (serverless) hospedadas no [Vercel](h
 #### `POST` /api/position
 
 Obtêm a posição dos ônibus a partir da requisão à API da SPTrans. Esta rota armazena os dados obtidos da SPTrans em um **cache** com 4.5 segundos de retenção. Isto é, a frequencia global de aquisição de dados à API do SPTrans é de 4.5 segundos independentemente do número de usuários do aplicativo.
-
-Modelo do payload da requisição:
-
-```json
-{
-  "q": [int]
-}
-```
-
-|chave|descrição|
-|---|---|
-|`q`|vetor de inteiros contendo os ids das linhas a serem monitoradas|
 
 
 
@@ -384,3 +372,10 @@ Recurso SPTrans: `http://api.olhovivo.sptrans.com.br/v2.1/Linha/Buscar?termosBus
 * https://www.random.org/colors/hex
 * https://coolors.co/palettes/popular/orange
 * https://www.appstorescreenshot.com
+* https://cthedot.de/icongen
+* https://realfavicongenerator.net
+
+
+## Cores
+* Azul: rgb(16, 146, 170) #1092AA
+* Amarelo: rgb(248, 176, 38) #F8B026
