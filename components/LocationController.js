@@ -22,7 +22,7 @@ export default function LocationController() {
       }
     },
     locationerror: e => {
-      alert(e)
+      alert(JSON.stringify(e))
       setWatching(false)
       setShouldCenter(false)
     }
