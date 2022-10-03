@@ -22,6 +22,7 @@ export default function LocationController() {
       }
     },
     locationerror: e => {
+      alert(e)
       setWatching(false)
       setShouldCenter(false)
     }
