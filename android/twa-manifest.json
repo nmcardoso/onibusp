@@ -1,0 +1,49 @@
+{
+  "packageId": "net.natanael.onibusp",
+  "host": "onibusp.vercel.app",
+  "name": "Ônibus USP",
+  "launcherName": "Ônibus USP",
+  "display": "standalone",
+  "themeColor": "#1092AA",
+  "navigationColor": "#000000",
+  "navigationColorDark": "#000000",
+  "navigationDividerColor": "#000000",
+  "navigationDividerColorDark": "#000000",
+  "backgroundColor": "#1092AA",
+  "enableNotifications": true,
+  "startUrl": "/",
+  "iconUrl": "https://onibusp.vercel.app/icons/android-chrome-512x512.png",
+  "splashScreenFadeOutDuration": 300,
+  "signingKey": {
+    "path": "/home/natan/repos/onibusp/android/android.keystore",
+    "alias": "android"
+  },
+  "appVersionName": "2",
+  "appVersionCode": 2,
+  "shortcuts": [],
+  "generatorApp": "bubblewrap-cli",
+  "webManifestUrl": "https://onibusp.vercel.app/manifest.json",
+  "fallbackType": "customtabs",
+  "features": {
+    "locationDelegation": {
+      "enabled": true
+    }
+  },
+  "alphaDependencies": {
+    "enabled": false
+  },
+  "enableSiteSettingsShortcut": true,
+  "isChromeOSOnly": false,
+  "isMetaQuest": false,
+  "fullScopeUrl": "https://onibusp.vercel.app/",
+  "minSdkVersion": 19,
+  "orientation": "portrait",
+  "fingerprints": [
+    {
+      "value": "4D:E7:4A:41:1B:03:55:79:7C:F4:08:14:9C:F5:D2:C7:30:01:A0:12:A1:9D:D5:BB:AB:04:5D:74:5D:03:5D:F6"
+    }
+  ],
+  "additionalTrustedOrigins": [],
+  "retainedBundles": [],
+  "appVersion": "2"
+}
