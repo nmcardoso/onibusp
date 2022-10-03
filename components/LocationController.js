@@ -4,6 +4,18 @@ import NonBubblingComponent from './NonBubblingComponent'
 import { useState } from 'react'
 import { Circle, useMapEvents } from 'react-leaflet'
 
+const getCircularReplacer = () => {
+  const seen = new WeakSet();
+  return (key, value) => {
+    if (typeof value === "object" && value !== null) {
+      if (seen.has(value)) {
+        return;
+      }
+      seen.add(value);
+    }
+    return value;
+  };
+}
 
 export default function LocationController() {
   const [position, setPosition] = useState({
@@ -22,7 +34,7 @@ export default function LocationController() {
       }
     },
     locationerror: e => {
-      alert(JSON.stringify(e))
+      alert(JSON.stringify(e, getCircularReplacer()))
       setWatching(false)
       setShouldCenter(false)
     }
